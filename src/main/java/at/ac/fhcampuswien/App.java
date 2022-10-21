@@ -87,4 +87,58 @@ public class App {
 
 
     }
+    public static int randomNumberBetweenOneAndHundred(){
+        return new Random().nextInt(100)+1;
+    }
+
+    public static boolean swapArrays(int[] array1, int[] array2) {
+        if (array1.length != array2.length)
+            return false;
+
+        for (int i = 0; i < array1.length; i++) {
+            array1[i] += array2[i];
+            array2[i] = array1[i] - array2[i];
+            array1[i] = array1[i] - array2[i];
+        }
+        return true;
+
+    }
+    public static String camelCase(String txt) {
+        char[] charArray = txt.toCharArray();
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < charArray.length; i++) {
+            if ((i == 0 && charArray[i] != ' ') || (charArray[i] != ' ' && charArray[i - 1] == ' ')) {
+                if (charArray[i] >= 'a' && charArray[i] <= 'z') {
+                    result.append((char) (charArray[i] - 'a' + 'A'));
+                } else {
+                    result.append(charArray[i]);
+                }
+
+            } else if (charArray[i] >= 'A' && charArray[i] <= 'Z') {
+                result.append((char) (charArray[i] + 'a' - 'A'));
+            } else if (charArray[i] >= 'a' && charArray[i] <= 'z') {
+                result.append(charArray[i]);
+            }
+            //other symbols don't care, just append
+
+        }
+        return result.toString();
+    }
+    public static int checkDigit(int [] code){
+        int summe= 0;
+        for(int i = 0; i < code.length; i++) {
+            summe = summe + code[i] * (i+2) ;
+        }
+        int differenz = 11 - summe % 11;
+        if(differenz == 11){
+            differenz= 5;
+        }else if (differenz == 10){
+            differenz = 0;
+        }
+        return differenz;
+
+    }
+
+
 }
