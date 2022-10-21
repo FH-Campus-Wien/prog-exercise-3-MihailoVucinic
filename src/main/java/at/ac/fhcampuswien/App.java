@@ -126,17 +126,18 @@ public class App {
         return result.toString();
     }
     public static int checkDigit(int [] code){
-        int summe= 0;
+        int sum= 0;
         for(int i = 0; i < code.length; i++) {
-            summe = summe + code[i] * (i+2) ;
+            sum = sum + code[i] * (i+2) ;
         }
-        int differenz = 11 - summe % 11;
-        if(differenz == 11){
-            differenz= 5;
-        }else if (differenz == 10){
-            differenz = 0;
+        int difference = 11 - sum % 11;
+        if(difference == 11){
+            difference= 5;
+        }else if (difference == 10){
+            difference = 0;
         }
-        return differenz;
+        return difference;
+
 
     }
 
