@@ -39,6 +39,7 @@ public class App {
         // print their results
         // etc.
     }
+
     public static long[] lcg(long seed) {
         long[] array = new long[10];
         long x;
@@ -57,7 +58,33 @@ public class App {
         return array;
     }
 
+    public static void guessingGame(int numberToGuess) {
 
+        int x = 0;
+
+        Scanner sc = new Scanner(System.in);
+
+        for (int i = 1; ; i++) {
+            System.out.print("Guess numberToGuess " + i + ": ");
+            x = sc.nextInt();
+
+            if (i == 10) {
+                System.out.println("You lost! Have you ever heard of divide & conquer?");
+                break;
+            }
+            if (x > numberToGuess) {
+                System.out.println("The numberToGuess AI picked is lower than your guess.");
+
+            } else if (x < numberToGuess) {
+                System.out.println("The numberToGuess AI picked is higher than your guess.");
+
+            } else if (x == numberToGuess) {
+                System.out.println("You won wisenheimer!");
+                break;
+            }
+
+        }
 
 
     }
+}
