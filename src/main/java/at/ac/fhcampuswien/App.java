@@ -65,7 +65,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         for (int i = 1; ; i++) {
-            System.out.print("Guess numberToGuess " + i + ": ");
+            System.out.print("Guess number " + i + ": ");
             x = sc.nextInt();
 
             if (i == 10) {
@@ -73,10 +73,10 @@ public class App {
                 break;
             }
             if (x > numberToGuess) {
-                System.out.println("The numberToGuess AI picked is lower than your guess.");
+                System.out.println("The number AI picked is lower than your guess.");
 
             } else if (x < numberToGuess) {
-                System.out.println("The numberToGuess AI picked is higher than your guess.");
+                System.out.println("The number AI picked is higher than your guess.");
 
             } else if (x == numberToGuess) {
                 System.out.println("You won wisenheimer!");
